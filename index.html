@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="LINE 帳號防盜手冊：四種盜帳號手法、九項必做設定、話術測驗與被盜自救步驟。">
+<meta property="og:title" content="LINE 帳號防盜手冊">
+<meta property="og:description" content="四種盜帳號手法、九項必做設定、話術測驗與被盜自救步驟。">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 6 54 14v14c0 13-9 24-22 28C19 52 10 41 10 28V14z' fill='%230C2340'/%3E%3Cpath d='m22 32 7 7 14-14' fill='none' stroke='%23F0B457' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<title>LINE 帳號防盜手冊</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@600&family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@700;900&display=swap">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px)}
+img{max-width:100%}
+[hidden]{display:none!important}
+/* 版面概念：滿版圖解公告。深藍為主、琥珀為輔，紅色只留給真正的禁止符號；圖大字少 */
+:root{
+  --w:1280px;
+  --paper:#FFFFFF; --paper-2:#EDF1F6; --panel:#FFFFFF;
+  --navy:#0C2340; --navy-2:#1B4068; --navy-soft:#E3EAF3; --on-navy:#F2F6FB;
+  --ink:#0A1628; --muted:#4D5D73; --line:#CCD6E2;
+  --amber:#A06400; --amber-soft:#FCF2DD; --amber-bright:#F0B457;
+  --mark:#B4453A; --mark-soft:#F8EBE9; --mark-block:#A33B31;
+  --green:#0A6A52; --green-soft:#E2F2EC;
+  --font-display:"Noto Serif TC","Songti TC",serif;
+  --font-body:"Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-hand:"LXGW WenKai TC","Noto Serif TC",serif;
+  --font-mono:"IBM Plex Mono","Noto Sans TC",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0A1017; --paper-2:#111A25; --panel:#141E2B;
+  --navy:#081626; --navy-2:#17314E; --navy-soft:#1A2A3C; --on-navy:#EAF1F9;
+  --ink:#E8EEF6; --muted:#93A4B8; --line:#24323F;
+  --amber:#E2A33F; --amber-soft:#2B2210; --amber-bright:#F0B457;
+  --mark:#E0796B; --mark-soft:#2E1714; --mark-block:#A33B31;
+  --green:#4ECFA7; --green-soft:#0C2A22;
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#0A1017; --paper-2:#111A25; --panel:#141E2B;
+  --navy:#081626; --navy-2:#17314E; --navy-soft:#1A2A3C; --on-navy:#EAF1F9;
+  --ink:#E8EEF6; --muted:#93A4B8; --line:#24323F;
+  --amber:#E2A33F; --amber-soft:#2B2210; --amber-bright:#F0B457;
+  --mark:#E0796B; --mark-soft:#2E1714; --mark-block:#A33B31;
+  --green:#4ECFA7; --green-soft:#0C2A22;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper); color:var(--ink); font-family:var(--font-body); font-size:17px; line-height:1.8; margin:0; -webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--font-display); font-weight:900; line-height:1.4; text-wrap:balance; margin:0}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:var(--w); margin:0 auto; padding-inline:clamp(18px,3.5vw,44px)}
+
+/* ── 圖示 ── */
+.ico{display:block; flex:none; width:28px; height:28px; color:currentColor}
+.ico svg{display:block; width:100%; height:100%}
+
+/* ── 頂端專線條 ── */
+.alertbar{background:var(--navy); color:var(--on-navy); padding-block:9px; border-bottom:1px solid rgba(255,255,255,.12)}
+.alertbar .wrap{display:flex; flex-wrap:wrap; align-items:center; gap:6px 22px; font-size:.88rem}
+.alertbar b{font-family:var(--font-mono); color:var(--amber-bright); font-size:1.02rem; letter-spacing:.04em}
+.alertbar .sep{opacity:.3}
+
+/* ── 導覽 ── */
+.nav{position:sticky; top:env(safe-area-inset-top,0px); z-index:50; background:var(--navy); border-bottom:3px solid var(--amber-bright)}
+.nav .wrap{display:flex; align-items:center; gap:10px 26px; padding-block:13px; overflow-x:auto; scrollbar-width:none}
+.nav .wrap::-webkit-scrollbar{display:none}
+.nav-brand{display:flex; align-items:center; gap:10px; color:var(--on-navy); font-weight:900; font-size:1.02rem; white-space:nowrap; margin-right:auto}
+.nav-brand .ico{width:24px; height:24px; color:var(--amber-bright)}
+.nav a{font-size:.95rem; font-weight:500; text-decoration:none; color:var(--on-navy); opacity:.8; white-space:nowrap; padding:4px 0; border-bottom:2px solid transparent; transition:.18s}
+.nav a:hover,.nav a:focus-visible{opacity:1; border-bottom-color:var(--amber-bright)}
+@media (max-width:760px){.nav-brand span{display:none}}
+
+/* ── 頭版 ── */
+.hero{background:var(--navy); color:var(--on-navy); padding-block:clamp(38px,5vw,70px) clamp(40px,5vw,72px); position:relative; overflow:hidden}
+.hero::before{content:""; position:absolute; inset:0; background:radial-gradient(900px 420px at 88% 0%, rgba(240,180,87,.16), transparent 70%); pointer-events:none}
+.hero .wrap{position:relative; display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); gap:clamp(28px,4vw,56px); align-items:center}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}}
+.badge{display:inline-flex; align-items:center; gap:9px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); color:var(--on-navy); font-size:.84rem; font-weight:500; padding:7px 15px; border-radius:999px; margin-bottom:22px}
+.badge .ico{width:18px; height:18px; color:var(--amber-bright)}
+h1{font-size:clamp(2.3rem,5.4vw,3.8rem); line-height:1.35}
+h1 em{font-style:normal; color:var(--amber-bright); background:linear-gradient(transparent 72%, rgba(240,180,87,.3) 72%)}
+.hero-sub{margin-top:22px; font-size:clamp(1.05rem,1.7vw,1.3rem); line-height:1.9; opacity:.9}
+.hero-note{margin-top:28px; padding-top:18px; border-top:1px solid rgba(255,255,255,.18); font-size:.82rem; opacity:.55; line-height:1.8}
+.signal{background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.17); border-radius:6px; padding:24px 22px}
+.signal h4{display:flex; align-items:center; gap:11px; font-size:1.05rem; margin-bottom:18px}
+.signal h4 .ico{width:26px; height:26px; color:var(--mark)}
+.signal ul{margin:0; padding:0; list-style:none; display:grid; gap:14px}
+.signal li{display:grid; grid-template-columns:auto minmax(0,1fr); gap:13px; font-size:1.02rem; font-weight:500; align-items:center}
+.signal li .ico{width:30px; height:30px; color:var(--mark)}
+
+/* ── 數據帶 ── */
+.facts{background:var(--paper-2); border-bottom:1px solid var(--line)}
+.facts .wrap{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line)}
+.facts .wrap>div{background:var(--paper-2); padding:26px clamp(14px,2vw,26px); display:grid; grid-template-columns:auto minmax(0,1fr); gap:16px; align-items:center}
+.facts .ico{width:40px; height:40px; color:var(--navy-2)}
+.fact b{display:block; font-size:clamp(1.4rem,2.6vw,1.9rem); font-weight:900; color:var(--ink); line-height:1.2}
+.fact span{display:block; margin-top:3px; font-size:.9rem; color:var(--muted); line-height:1.6}
+@media (max-width:720px){.facts .wrap{grid-template-columns:1fr}}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .facts .ico{color:var(--amber)}}
+:root[data-theme="dark"] .facts .ico{color:var(--amber)}
+
+/* ── 區塊骨架 ── */
+section{padding-block:clamp(46px,5vw,76px); scroll-margin-top:clamp(70px,9vw,104px)}
+section.tint{background:var(--paper-2)}
+.sec-head{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,.85fr); gap:14px 50px; align-items:end; margin-bottom:clamp(26px,3vw,40px); padding-bottom:20px; border-bottom:3px solid var(--navy-2)}
+@media (max-width:860px){.sec-head{grid-template-columns:1fr; align-items:start}}
+.sec-num{display:inline-block; font-family:var(--font-mono); font-size:.78rem; letter-spacing:.14em; color:#fff; background:var(--navy); padding:5px 12px; margin-bottom:12px}
+h2{font-size:clamp(1.8rem,3.4vw,2.6rem)}
+.sec-head p{color:var(--muted); font-size:1rem; padding-bottom:3px}
+
+/* ── 四格流程圖 ── */
+.flow{display:grid; grid-template-columns:1fr auto 1fr auto 1fr auto 1fr; gap:clamp(8px,1.4vw,18px); align-items:center; margin-bottom:clamp(26px,3.5vw,42px)}
+.flow-step{background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:clamp(16px,2vw,24px) 10px; text-align:center}
+.flow-step .ico{width:clamp(42px,5vw,62px); height:clamp(42px,5vw,62px); margin:0 auto 12px; color:var(--navy-2)}
+.flow-step b{display:block; font-size:clamp(.95rem,1.5vw,1.15rem); font-weight:700}
+.flow-step.danger{background:var(--mark-soft); border-color:var(--mark)}
+.flow-step.danger .ico{color:var(--mark)}
+.flow-step.danger b{color:var(--mark)}
+.flow-arrow{width:clamp(20px,2.4vw,30px); height:clamp(20px,2.4vw,30px); color:var(--muted); opacity:.75; animation:slide 1.8s ease-in-out infinite}
+@media (max-width:760px){
+  .flow{grid-template-columns:1fr; gap:6px}
+  .flow-arrow{transform:rotate(90deg); margin:0 auto; animation:slide-y 1.8s ease-in-out infinite}
+}
+@keyframes slide{0%,100%{transform:translateX(-3px)}50%{transform:translateX(3px)}}
+@keyframes slide-y{0%,100%{transform:rotate(90deg) translateX(-3px)}50%{transform:rotate(90deg) translateX(3px)}}
+
+/* ── 手法卡 ── */
+.grid2{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(16px,2vw,24px)}
+@media (max-width:880px){.grid2{grid-template-columns:1fr}}
+.card{background:var(--panel); border:1px solid var(--line); border-top:4px solid var(--navy-2); border-radius:6px; padding:clamp(20px,2.4vw,30px); display:flex; flex-direction:column}
+.card.amber{border-top-color:var(--amber)}
+.card-head{display:flex; align-items:center; gap:16px; margin-bottom:14px}
+.card-head .ico{width:56px; height:56px; color:var(--mark); animation:bob 2.8s ease-in-out infinite}
+.card.amber .card-head .ico{color:var(--amber)}
+.tag{display:inline-block; font-size:.82rem; font-weight:700; letter-spacing:.04em; padding:5px 11px; background:var(--navy-soft); color:var(--navy-2); border-radius:999px}
+.card.amber .tag{background:var(--amber-soft); color:var(--amber)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tag{color:var(--on-navy)}}
+:root[data-theme="dark"] .tag{color:var(--on-navy)}
+.card h3{font-size:1.4rem}
+.chat{background:var(--paper-2); border-radius:6px; padding:16px; display:flex; flex-direction:column; gap:10px; margin-top:18px}
+.bubble{background:var(--panel); border:1px solid var(--line); border-radius:4px 16px 16px 16px; padding:12px 15px; max-width:94%; font-size:1rem; line-height:1.75; align-self:flex-start}
+.bubble.me{align-self:flex-end; border-radius:16px 4px 16px 16px; background:var(--green-soft); border-color:transparent}
+.bubble .link{color:var(--mark); text-decoration:underline; text-underline-offset:3px; word-break:break-all}
+.act{margin-top:auto; padding-top:18px; display:flex; align-items:center; gap:13px; font-size:1.05rem; font-weight:700}
+.act .ico{width:30px; height:30px; color:var(--green)}
+
+/* ── 假登入頁 ── */
+.split{display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); gap:clamp(22px,3vw,44px); align-items:center; margin-top:clamp(22px,3vw,34px)}
+@media (max-width:880px){.split{grid-template-columns:1fr}}
+.fake{position:relative; border:2px solid var(--mark); border-radius:10px; background:var(--panel); padding:36px 22px 24px; max-width:380px; width:100%; margin-inline:auto}
+.fake::after{content:"示意圖・非真實頁面"; position:absolute; inset-inline:0; top:0; text-align:center; font-size:.76rem; font-weight:700; background:var(--mark-block); color:#fff; padding:6px}
+.fake-url{font-family:var(--font-mono); font-size:.8rem; background:var(--paper-2); border:1px solid var(--line); border-radius:999px; padding:9px 15px; color:var(--muted); word-break:break-all}
+.fake-url b{color:var(--mark)}
+.fake-body{margin-top:20px; text-align:center}
+.field{margin-top:12px; border:1px solid var(--line); border-radius:4px; padding:13px; color:var(--muted); font-size:.95rem; text-align:left; background:var(--paper-2)}
+.fake-btn{margin-top:16px; border-radius:4px; padding:13px; font-weight:700; background:var(--muted); color:var(--panel); opacity:.8}
+.callouts{display:grid; gap:20px}
+.callouts h4{font-size:1.3rem}
+.callout{display:grid; grid-template-columns:auto minmax(0,1fr); gap:15px; align-items:center; font-size:1.05rem; line-height:1.7}
+.callout .n{font-family:var(--font-mono); font-weight:600; font-size:.95rem; background:var(--navy); color:#fff; width:30px; height:30px; display:grid; place-items:center; border-radius:50%}
+.callout b{color:var(--mark)}
+
+/* ── 三不原則 ── */
+.rule{background:var(--navy); color:var(--on-navy); padding-block:clamp(38px,4.5vw,62px)}
+.rule-top{display:flex; align-items:center; justify-content:center; gap:clamp(14px,2vw,26px); text-align:center; flex-wrap:wrap}
+.rule-top .ico{width:clamp(50px,6vw,72px); height:clamp(50px,6vw,72px); color:var(--amber-bright)}
+.rule q{display:block; quotes:none; font-family:var(--font-hand); font-weight:700; font-size:clamp(1.7rem,4.2vw,3rem); line-height:1.5}
+.rule q em{font-style:normal; color:var(--amber-bright); background:linear-gradient(transparent 72%, rgba(240,180,87,.3) 72%)}
+.stk-row{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:clamp(26px,3vw,38px)}
+@media (max-width:760px){.stk-row{grid-template-columns:1fr}}
+.stk-card{display:grid; grid-template-columns:auto minmax(0,1fr); gap:18px; align-items:center; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.15); border-radius:6px; padding:18px 20px}
+.stk-card .ico{width:54px; height:54px; color:var(--mark); animation:bob 2.8s ease-in-out infinite}
+.stk-card b{display:block; font-size:1.2rem; font-weight:900; line-height:1.4}
+.stk-card span{display:block; font-size:.92rem; opacity:.72; margin-top:2px}
+
+/* ── 設定清單 ── */
+.setup{display:grid; grid-template-columns:290px minmax(0,1fr); gap:clamp(22px,3vw,44px); align-items:start}
+@media (max-width:980px){.setup{grid-template-columns:1fr}}
+.panel{background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:24px 22px; position:sticky; top:calc(env(safe-area-inset-top,0px) + 78px)}
+@media (max-width:980px){.panel{position:static}}
+.panel h4{display:flex; align-items:center; justify-content:space-between; gap:10px; font-size:1.15rem}
+.panel h4 .ico{width:32px; height:32px; color:var(--green)}
+.ring{display:flex; align-items:baseline; gap:7px; margin-top:14px; font-weight:900; color:var(--green)}
+.ring span:first-child{font-family:var(--font-mono); font-size:2.8rem; line-height:1; font-variant-numeric:tabular-nums}
+.ring span:last-child{font-size:1rem; color:var(--muted); font-weight:500}
+.track{height:10px; background:var(--paper-2); border-radius:999px; overflow:hidden; margin-top:14px}
+.track i{display:block; height:100%; width:0; background:var(--green); border-radius:999px; transition:width .35s ease}
+.panel p{margin-top:14px; font-size:.92rem; color:var(--muted); line-height:1.75}
+.steps{display:grid; gap:13px}
+.step{background:var(--panel); border:1px solid var(--line); border-left:5px solid var(--line); border-radius:6px; transition:border-color .2s}
+.step.done{border-left-color:var(--green)}
+.step-top{display:grid; grid-template-columns:auto auto minmax(0,1fr); gap:16px; padding:20px clamp(16px,2vw,24px); cursor:pointer; align-items:center}
+.step-top input{appearance:none; width:28px; height:28px; border:2px solid var(--line); border-radius:6px; cursor:pointer; background:var(--panel); transition:.2s}
+.step-top input:checked{background:var(--green); border-color:var(--green)}
+.step-top input:checked::after{content:"✓"; color:#fff; display:grid; place-items:center; height:100%; font-size:1rem; font-weight:900}
+.step-top input:focus-visible{outline:3px solid var(--amber); outline-offset:3px}
+.step-top>.ico{width:40px; height:40px; color:var(--navy-2)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .step-top>.ico{color:var(--amber)}}
+:root[data-theme="dark"] .step-top>.ico{color:var(--amber)}
+.step-name{font-weight:700; font-size:1.15rem; line-height:1.5; display:block}
+.step-why{font-size:.95rem; color:var(--muted); margin-top:4px; display:block; line-height:1.65}
+.step.done .step-name{color:var(--muted); text-decoration:line-through; text-decoration-color:var(--green)}
+.step-foot{display:flex; flex-wrap:wrap; gap:10px 18px; align-items:center; padding:0 clamp(16px,2vw,24px) 18px; margin-left:84px}
+@media (max-width:620px){.step-foot{margin-left:0}}
+.path{display:flex; flex-wrap:wrap; align-items:center; gap:6px; font-size:.86rem; color:var(--muted)}
+.path span{background:var(--paper-2); border:1px solid var(--line); border-radius:4px; padding:5px 10px; white-space:nowrap}
+.path span:last-child{color:var(--ink); border-color:var(--muted); font-weight:700}
+.path i{font-style:normal; opacity:.5}
+.toggle-row{display:inline-flex; align-items:center; gap:10px; padding:6px 14px 6px 15px; background:var(--paper-2); border-radius:999px; font-size:.88rem; font-weight:500; white-space:nowrap}
+.sw{width:44px; height:25px; border-radius:999px; position:relative; flex:none}
+.sw::after{content:""; position:absolute; top:3px; width:19px; height:19px; border-radius:50%; background:#fff; box-shadow:0 1px 3px rgba(0,0,0,.35)}
+.sw.off{background:var(--muted); opacity:.55}
+.sw.off::after{left:3px}
+.sw.on{background:var(--green)}
+.sw.on::after{left:22px}
+
+/* ── 測驗 ── */
+.quiz{background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:clamp(18px,2.2vw,26px); display:flex; flex-direction:column}
+.qmsg{background:var(--paper-2); border-radius:4px 16px 16px 16px; padding:15px 17px; font-size:1.05rem; line-height:1.75}
+.qfrom{display:flex; align-items:center; gap:10px; font-size:.88rem; color:var(--muted); margin-bottom:11px}
+.qfrom .ico{width:24px; height:24px}
+.qopts{display:grid; grid-template-columns:1fr 1fr; gap:11px; margin-top:16px}
+@media (max-width:520px){.qopts{grid-template-columns:1fr}}
+.qopts button{font:inherit; font-size:1rem; font-weight:500; padding:15px 10px; border:1px solid var(--line); background:var(--panel); color:var(--ink); border-radius:6px; cursor:pointer; transition:.18s; min-width:0}
+.qopts button:hover:not(:disabled){border-color:var(--navy-2); background:var(--paper-2)}
+.qopts button:focus-visible{outline:3px solid var(--amber); outline-offset:2px}
+.qopts button:disabled{cursor:default}
+.qopts button.right{background:var(--green-soft); border-color:var(--green); color:var(--green); font-weight:700}
+.qopts button.wrong{background:var(--mark-soft); border-color:var(--mark); color:var(--mark); font-weight:700}
+.qans{display:grid; grid-template-columns:auto minmax(0,1fr); gap:12px; align-items:center; margin-top:14px; font-size:.98rem; line-height:1.7; padding:14px 16px; background:var(--paper-2); border-left:4px solid var(--green)}
+.qans .ico{width:26px; height:26px; color:var(--green)}
+.score{margin-top:24px; text-align:center; font-size:1.05rem; font-weight:700; color:var(--muted); padding:18px; border:2px dashed var(--line); border-radius:6px}
+
+/* ── 自救步驟 ── */
+.sos{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(13px,1.6vw,20px)}
+@media (max-width:880px){.sos{grid-template-columns:1fr}}
+.sos-item{background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:clamp(18px,2.2vw,26px); display:grid; grid-template-columns:auto minmax(0,1fr); gap:18px; align-items:center}
+.sos-item .ico{width:46px; height:46px; color:var(--navy-2)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .sos-item .ico{color:var(--amber)}}
+:root[data-theme="dark"] .sos-item .ico{color:var(--amber)}
+.sos-when{display:inline-block; font-size:.8rem; font-weight:700; color:var(--mark); background:var(--mark-soft); padding:3px 10px; border-radius:999px}
+.sos-item h3{font-size:1.2rem; margin-top:8px}
+.sos-item p{font-size:.96rem; color:var(--muted); margin-top:5px; line-height:1.7}
+
+/* ── 分享 ── */
+.share{display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); gap:clamp(20px,3vw,40px); align-items:start}
+@media (max-width:880px){.share{grid-template-columns:1fr}}
+.cardbox{background:var(--panel); border:1px solid var(--line); border-top:5px solid var(--amber); border-radius:6px; padding:clamp(22px,2.6vw,32px)}
+.cardbox pre{font-family:var(--font-hand); font-size:1.15rem; line-height:2.1; white-space:pre-wrap; margin:0 0 20px; color:var(--ink)}
+.btn{font:inherit; font-size:1rem; font-weight:700; padding:15px 30px; border-radius:6px; border:none; background:var(--navy); color:#fff; cursor:pointer; transition:.2s}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn{background:var(--navy-2)}}
+:root[data-theme="dark"] .btn{background:var(--navy-2)}
+.btn:hover{filter:brightness(1.18)}
+.btn:focus-visible{outline:3px solid var(--amber); outline-offset:3px}
+.copied{font-size:.95rem; color:var(--green); font-weight:700; margin-left:14px}
+.hotline{display:grid; gap:12px}
+.hot{border-radius:6px; padding:22px 24px; display:grid; grid-template-columns:auto minmax(0,1fr); gap:18px; align-items:center; background:var(--mark-block); color:#fff}
+.hot.dark{background:var(--navy)}
+.hot .ico{width:42px; height:42px}
+.hot b{display:block; font-family:var(--font-mono); font-size:2.6rem; font-weight:600; line-height:1}
+.hot span{display:block; margin-top:4px; font-size:.95rem; opacity:.9; line-height:1.6}
+
+/* ── 頁尾 ── */
+footer{background:var(--navy); color:var(--on-navy); padding-block:clamp(32px,3.5vw,48px)}
+footer .wrap{display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,1fr); gap:clamp(22px,3vw,44px)}
+@media (max-width:860px){footer .wrap{grid-template-columns:1fr}}
+footer h4{font-size:.95rem; opacity:.65; margin-bottom:14px}
+footer ul{margin:0; padding:0; list-style:none; display:grid; gap:10px; font-size:.9rem; line-height:1.6}
+footer a{text-decoration:underline; text-underline-offset:4px; text-decoration-color:rgba(255,255,255,.3)}
+footer a:hover{text-decoration-color:var(--amber-bright)}
+footer .fine{font-size:.86rem; opacity:.6; line-height:1.85}
+.stripe{height:10px; background:repeating-linear-gradient(135deg,var(--amber-bright) 0 18px,var(--navy) 18px 36px)}
+
+/* ── 動畫 ── */
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-5px) rotate(5deg)}}
+@keyframes push{0%,100%{transform:scale(1)}50%{transform:scale(1.09)}}
+@keyframes pulse{0%,100%{transform:scale(1); opacity:1}50%{transform:scale(1.14); opacity:.72}}
+@keyframes slash-in{0%{stroke-dashoffset:62}45%,88%{stroke-dashoffset:0}100%{stroke-dashoffset:62}}
+@keyframes draw{0%{stroke-dashoffset:34}35%,85%{stroke-dashoffset:0}100%{stroke-dashoffset:34}}
+@keyframes ring{0%,70%,100%{transform:rotate(0)}75%,85%{transform:rotate(12deg)}80%,90%{transform:rotate(-12deg)}}
+.s-slash{stroke-dasharray:62; stroke-dashoffset:62; animation:slash-in 2.8s ease-in-out infinite}
+.s-draw{stroke-dasharray:34; stroke-dashoffset:34; animation:draw 3s ease-in-out infinite}
+.s-push{transform-origin:32px 42px; animation:push 1.5s ease-in-out infinite}
+.s-pulse{animation:pulse 1.6s ease-in-out infinite; transform-origin:center}
+.s-ring{transform-origin:32px 46px; animation:ring 3s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){*{transition:none!important; animation:none!important}.s-slash,.s-draw{stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+<div class="alertbar"><div class="wrap">
+  <span>可疑訊息先查證：</span>
+  <span><b>165</b> 反詐騙專線</span><span class="sep">|</span>
+  <span><b>110</b> 報案專線</span>
+</div></div>
+
+<nav class="nav"><div class="wrap">
+  <span class="nav-brand"><span class="ico" data-ico="shield"></span>LINE 帳號防盜手冊<span> ・ 全民防詐</span></span>
+  <a href="#how">詐騙手法</a>
+  <a href="#setup">九項設定</a>
+  <a href="#quiz">自我測驗</a>
+  <a href="#sos">被盜自救</a>
+  <a href="#share">轉傳家人</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div>
+    <span class="badge"><span class="ico" data-ico="share"></span>公開宣導 ・ 請自由轉傳</span>
+    <h1>他們不破解密碼<br>是你<em>親手交出帳號</em></h1>
+    <p class="hero-sub">詐騙要的只是一組簡訊驗證碼。<br>帳號被搬走，幾乎救不回來。</p>
+    <p class="hero-note">整理者：______（請填上班級姓名）・2026 年 10 月<br>本頁為防詐宣導教材，非 LINE 官方網站。</p>
+  </div>
+  <aside class="signal">
+    <h4><span class="ico" data-ico="warn"></span>看到這些，立刻停手</h4>
+    <ul>
+      <li><span class="ico" data-ico="no-sms"></span>跟你要「驗證碼」</li>
+      <li><span class="ico" data-ico="no-link"></span>要你「用 LINE 登入」</li>
+      <li><span class="ico" data-ico="no-money"></span>好友突然借錢、要點數</li>
+      <li><span class="ico" data-ico="no-qr"></span>掃 QR 出現「登入」</li>
+      <li><span class="ico" data-ico="no-clock"></span>「24 小時內將停用」</li>
+    </ul>
+  </aside>
+</div></header>
+
+<div class="facts"><div class="wrap">
+  <div><span class="ico" data-ico="clock"></span><div class="fact"><b>3 分鐘</b><span>九項設定全部做完</span></div></div>
+  <div><span class="ico" data-ico="sms"></span><div class="fact"><b>1 組驗證碼</b><span>他們要的只有這個</span></div></div>
+  <div><span class="ico" data-ico="steal"></span><div class="fact"><b>幾乎救不回</b><span>帳號被搬走之後</span></div></div>
+</div></div>
+
+<section id="how"><div class="wrap">
+  <div class="sec-head">
+    <div><span class="sec-num">01 ／ 詐騙手法</span><h2>帳號是這樣被搬走的</h2></div>
+    <p>四種手法，認得開頭那句話就擋得住。</p>
+  </div>
+
+  <div class="flow">
+    <div class="flow-step"><span class="ico" data-ico="chat"></span><b>收到訊息</b></div>
+    <span class="ico flow-arrow" data-ico="arrow"></span>
+    <div class="flow-step"><span class="ico" data-ico="link"></span><b>點了連結</b></div>
+    <span class="ico flow-arrow" data-ico="arrow"></span>
+    <div class="flow-step"><span class="ico" data-ico="sms"></span><b>給了驗證碼</b></div>
+    <span class="ico flow-arrow" data-ico="arrow"></span>
+    <div class="flow-step danger"><span class="ico" data-ico="steal"></span><b>帳號被搬走</b></div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card-head"><span class="ico" data-ico="no-link"></span><span class="tag">手法一 ／ 假登入頁</span></div>
+      <h3>「幫我家妹妹投個票」</h3>
+      <div class="chat">
+        <div class="bubble">在嗎～幫我家妹妹投個票好嗎🙏</div>
+        <div class="bubble">https://<span class="link">line-vote.xyz</span>　進去用 LINE 登入就能投</div>
+        <div class="bubble me">好啊</div>
+      </div>
+      <div class="act"><span class="ico" data-ico="phone"></span>投票不必登入 LINE。打電話問本人。</div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><span class="ico" data-ico="no-sms"></span><span class="tag">手法二 ／ 騙驗證碼</span></div>
+      <h3>「驗證碼借我一下」</h3>
+      <div class="chat">
+        <div class="bubble">在家代工日領 1200，請把認證碼回傳登記</div>
+        <div class="bubble">我手機掉了，驗證碼寄到你那，幫我截圖</div>
+        <div class="bubble">平台要雙方驗證，回覆一下認證碼就好</div>
+      </div>
+      <div class="act"><span class="ico" data-ico="block"></span>驗證碼一律不給，連家人也不給。</div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><span class="ico" data-ico="no-qr"></span><span class="tag">手法三 ／ 假 QR Code</span></div>
+      <h3>「掃碼領免費好康」</h3>
+      <div class="chat">
+        <div class="bubble">加好友免費送遊戲幣 ✨ 掃描下方 QR Code</div>
+        <div class="bubble">優惠券限量發放，掃碼即領，剩 3 位</div>
+      </div>
+      <div class="act"><span class="ico" data-ico="block"></span>掃完出現「登入」就是陷阱，立刻取消。</div>
+    </div>
+
+    <div class="card amber">
+      <div class="card-head"><span class="ico" data-ico="no-voice"></span><span class="tag">手法四 ／ 語音信箱</span></div>
+      <h3>半夜打來，你沒接也中</h3>
+      <div class="chat">
+        <div class="bubble">驗證碼也能用語音電話播報</div>
+        <div class="bubble">你睡著沒接 → 留進語音信箱</div>
+        <div class="bubble">對方用預設密碼撥進去聽走</div>
+      </div>
+      <div class="act"><span class="ico" data-ico="lock"></span>打給電信客服，改掉或停用語音信箱。</div>
+    </div>
+  </div>
+
+  <div class="split">
+    <div class="fake" aria-label="假冒 LINE 登入頁的示意圖，並非真實頁面">
+      <div class="fake-url">🔒 https://line-vote.<b>xyz</b>/login</div>
+      <div class="fake-body">
+        <div class="field">電子郵件帳號</div>
+        <div class="field">密碼</div>
+        <div class="fake-btn">登　入</div>
+      </div>
+    </div>
+    <div class="callouts">
+      <h4>假登入頁的三個破綻</h4>
+      <div class="callout"><span class="n">1</span><span>網址結尾不是 <b>line.me</b></span></div>
+      <div class="callout"><span class="n">2</span><span>投票活動<b>不需要</b>輸入帳號密碼</span></div>
+      <div class="callout"><span class="n">3</span><span>下一步一定跟你要<b>驗證碼</b></span></div>
+    </div>
+  </div>
+</div></section>
+
+<div class="rule"><div class="wrap">
+  <div class="rule-top">
+    <span class="ico" data-ico="palm"></span>
+    <q>驗證碼就是你本人<br><em>給出去，帳號就不是你的</em></q>
+  </div>
+  <div class="stk-row">
+    <div class="stk-card"><span class="ico" data-ico="no-sms"></span><div><b>不給驗證碼</b><span>不管對方是誰</span></div></div>
+    <div class="stk-card"><span class="ico" data-ico="no-link"></span><div><b>不點陌生連結</b><span>投票、領獎、包裹</span></div></div>
+    <div class="stk-card"><span class="ico" data-ico="no-qr"></span><div><b>不掃陌生 QR</b><span>出現登入就取消</span></div></div>
+  </div>
+</div></div>
+
+<section id="setup" class="tint"><div class="wrap">
+  <div class="sec-head">
+    <div><span class="sec-num">02 ／ 預防設定</span><h2>現在就做的九項設定</h2></div>
+    <p>拿出手機跟著做，做一項打一個勾。</p>
+  </div>
+  <div class="setup">
+    <div class="panel">
+      <h4>防護進度<span class="ico" data-ico="shield"></span></h4>
+      <div class="ring"><span id="done">0</span><span>／ 9 項</span></div>
+      <div class="track"><i id="bar"></i></div>
+      <p>只能做一項的話，請做第 1 項。</p>
+    </div>
+    <div class="steps" id="steps"></div>
+  </div>
+</section>
+
+<section id="quiz"><div class="wrap">
+  <div class="sec-head">
+    <div><span class="sec-num">03 ／ 自我測驗</span><h2>這幾則，你看得出來嗎</h2></div>
+    <p>六題，點下去馬上知道答案。</p>
+  </div>
+  <div class="grid2" id="quizbox"></div>
+  <div class="score" id="score">已作答 0 ／ 6</div>
+</section>
+
+<section id="sos" class="tint"><div class="wrap">
+  <div class="sec-head">
+    <div><span class="sec-num">04 ／ 緊急自救</span><h2>已經被盜了怎麼辦</h2></div>
+    <p>從發現那一刻算起，越前面越有用。</p>
+  </div>
+  <div class="sos" id="sosbox"></div>
+</section>
+
+<section id="share"><div class="wrap">
+  <div class="sec-head">
+    <div><span class="sec-num">05 ／ 轉傳</span><h2>傳給家人這一段就好</h2></div>
+    <p>長輩不看長文，複製這三句傳給他們。</p>
+  </div>
+  <div class="share">
+    <div class="cardbox">
+      <pre id="cardtext">【LINE 防盜三句話】
+一、有人跟你要「驗證碼」，一律是詐騙。
+二、要你「用 LINE 登入」的連結，一律不點。
+三、打開 LINE → 設定 → 我的帳號 → 關掉「允許自其他裝置登入」。
+
+被盜了：打電話通知親友，並撥 165。</pre>
+      <button class="btn" id="copy" type="button">複製這段文字</button><span class="copied" id="copied" hidden>已複製</span>
+    </div>
+    <div class="hotline">
+      <div class="hot"><span class="ico" data-ico="siren"></span><div><b>165</b><span>反詐騙專線・可查證可疑訊息</span></div></div>
+      <div class="hot dark"><span class="ico" data-ico="police"></span><div><b>110</b><span>報案專線・已有金錢損失時打</span></div></div>
+    </div>
+  </div>
+</div></section>
+
+<div class="stripe"></div>
+<footer><div class="wrap">
+  <div>
+    <h4>資料來源</h4>
+    <ul>
+      <li><a href="https://www.businesstoday.com.tw/article/category/183030/post/202609160053/">今周刊｜點連結、要驗證碼等於帳號送人，設定「2 功能」快關</a></li>
+      <li><a href="https://www.ettoday.net/news/20260915/3238120.htm">ETtoday｜LINE 設定「2 種功能快關」，官方示警</a></li>
+      <li><a href="https://www.taiwannews.com.tw/zh/news/6061089">台灣英文新聞｜刑事局示警：假投票連結誘騙驗證碼</a></li>
+      <li><a href="https://mrmad.com.tw/line-account-hijacking-security-alert-voicemail">瘋先生｜語音信箱漏洞與三大電信關閉設定</a></li>
+      <li><a href="https://mrmad.com.tw/line-security-settings">瘋先生｜LINE 安全設定總整理</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>關於本頁</h4>
+    <p class="fine">防詐宣導教材，與 LINE 公司無關。頁面中的登入畫面為示意圖。設定路徑請以你手機畫面為準。</p>
+  </div>
+</div></footer>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ───── 圖示庫 ───── */
+  var SLASH = '<line class="s-slash" x1="13" y1="51" x2="51" y2="13" stroke-width="7"/>';
+  var I = {
+    shield: '<path d="M32 6 54 14v14c0 13-9 24-22 28C19 52 10 41 10 28V14z"/><path class="s-draw" d="m22 32 7 7 14-14"/>',
+    warn: '<g class="s-pulse"><path d="M32 10 58 54H6z"/><path d="M32 26v11"/><path d="M32 46h.01" stroke-width="6"/></g>',
+    share: '<circle cx="48" cy="16" r="8"/><circle cx="16" cy="32" r="8"/><circle cx="48" cy="48" r="8"/><path d="m23 28 18-8M23 36l18 8"/>',
+    chat: '<path d="M54 38a8 8 0 0 1-8 8H26L14 56V18a8 8 0 0 1 8-8h24a8 8 0 0 1 8 8z"/><path d="M26 28h.01M34 28h.01M42 28h.01" stroke-width="6"/>',
+    sms: '<rect x="8" y="14" width="48" height="30" rx="8"/><path d="M21 29h.01M32 29h.01M43 29h.01" stroke-width="7"/><path d="M24 44v8l9-8"/>',
+    link: '<path d="M26 38 38 26"/><path d="M31 20.5 34.5 17a9.2 9.2 0 0 1 13 13L44 33.5"/><path d="M33 43.5 29.5 47a9.2 9.2 0 0 1-13-13L20 30.5"/>',
+    qr: '<rect x="11" y="11" width="16" height="16" rx="4"/><rect x="37" y="11" width="16" height="16" rx="4"/><rect x="11" y="37" width="16" height="16" rx="4"/><path d="M37 37h8v8M50 50h3"/>',
+    voice: '<circle cx="21" cy="33" r="9"/><circle cx="43" cy="33" r="9"/><path d="M21 42h22"/>',
+    money: '<rect x="6" y="16" width="52" height="32" rx="6"/><path d="M6 28h52M16 39h9"/>',
+    clock: '<circle cx="32" cy="32" r="22"/><path d="M32 19v14l9 6"/>',
+    steal: '<rect x="8" y="10" width="26" height="44" rx="6"/><path d="M18 46h6"/><path d="M42 32h14m-6-6 6 6-6 6"/>',
+    broken: '<path d="M26 10h-12v18l8 4-6 22h22"/><path d="M38 54h12V36l-8-4 6-22H26"/>',
+    arrow: '<path d="M10 32h40m-12-12 12 12-12 12" stroke-width="6"/>',
+    phone: '<g class="s-ring"><path d="M46 56c-19 0-36-17-36-36 0-3 2-5 5-6l6-1c2-.4 4 .8 5 3l2 6c.6 2-.2 4-2 5l-3 2c3 6 7 10 13 13l2-3c1-2 3-2.6 5-2l6 2c2 .6 3 2.6 3 5l-1 6c-.4 3-3 5-5 5z"/></g>',
+    block: '<circle cx="32" cy="32" r="22"/><path d="M17 17 47 47"/>',
+    lock: '<rect x="12" y="28" width="40" height="26" rx="7"/><path d="M22 28v-7a10 10 0 0 1 20 0v7"/><path d="M32 38v6" stroke-width="6"/>',
+    key: '<circle cx="23" cy="25" r="11"/><path d="m31 33 21 21M45 49l5-5M39 43l5-5"/>',
+    mail: '<rect x="8" y="14" width="48" height="36" rx="7"/><path d="m11 20 21 15 21-15"/>',
+    seal: '<rect x="8" y="12" width="48" height="32" rx="7"/><path d="m11 18 21 14 21-14"/><path class="s-draw" d="m24 48 6 6 12-12"/>',
+    globe: '<circle cx="32" cy="32" r="22"/><path d="M10 32h44"/><path d="M32 10c7 8 7 36 0 44-7-8-7-36 0-44z"/>',
+    swap: '<path d="M14 22h30m-9-9 9 9-9 9"/><path d="M50 42H20m9-9-9 9 9 9"/>',
+    eye: '<path d="M4 32s10-17 28-17 28 17 28 17-10 17-28 17S4 32 4 32z"/><circle cx="32" cy="32" r="8"/>',
+    devices: '<rect x="4" y="12" width="36" height="26" rx="4"/><path d="M14 46h16"/><rect x="46" y="22" width="14" height="30" rx="4"/>',
+    bell: '<path d="M32 8a14 14 0 0 1 14 14v12l5 8H13l5-8V22A14 14 0 0 1 32 8z"/><path d="M26 48a6 6 0 0 0 12 0"/>',
+    megaphone: '<path d="M12 26v12l9 2 5 14h7l-5-14 24 8V12L21 26z"/>',
+    form: '<rect x="12" y="8" width="40" height="48" rx="7"/><path d="M23 24h18M23 34h18M23 44h11"/>',
+    refresh: '<path d="M54 32A22 22 0 1 1 46 15"/><path d="M48 8v10H38"/>',
+    siren: '<g class="s-pulse"><path d="M16 46a16 16 0 0 1 32 0z"/><path d="M8 54h48M32 18v-8M13 26l-6-5M51 26l6-5"/></g>',
+    police: '<path d="M32 6 54 14v14c0 13-9 24-22 28C19 52 10 41 10 28V14z"/><path d="M32 24v10M32 42h.01" stroke-width="6"/>',
+    person: '<circle cx="32" cy="21" r="11"/><path d="M11 56c0-11 9-19 21-19s21 8 21 19"/>',
+    briefcase: '<rect x="7" y="20" width="50" height="31" rx="6"/><path d="M24 20v-5a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v5M7 33h50"/>',
+    bulb: '<path d="M24 50h16M27 58h10"/><path d="M32 6a17 17 0 0 1 10 30v6H22v-6A17 17 0 0 1 32 6z"/>',
+    palm: '<g class="s-push"><circle cx="32" cy="32" r="23" stroke-width="7"/><line class="s-slash" x1="16" y1="48" x2="48" y2="16" stroke-width="7"/></g>'
+  };
+  ["sms", "link", "qr", "voice", "money", "clock"].forEach(function (k) { I["no-" + k] = I[k] + SLASH; });
+
+  function svg(key) {
+    return '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (I[key] || "") + "</svg>";
+  }
+  function fill(root) {
+    Array.prototype.forEach.call((root || document).querySelectorAll("[data-ico]"), function (el) {
+      if (!el.firstChild) el.innerHTML = svg(el.getAttribute("data-ico"));
+    });
+  }
+  fill(document);
+
+  function esc(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+
+  /* ───── 九項設定 ───── */
+  var STEPS = [
+    { ico: "devices", name: "關閉「允許自其他裝置登入」", why: "不用電腦版就關掉，別人就登不進來。",
+      path: ["設定", "我的帳號", "允許自其他裝置登入"], toggle: { label: "應關閉", state: "off" } },
+    { ico: "eye", name: "檢查「登入中的裝置」", why: "有不認識的裝置，立刻全部登出。",
+      path: ["設定", "我的帳號", "登入中的裝置"] },
+    { ico: "key", name: "關閉「使用密碼登入」", why: "密碼外流也進不去。找不到這個選項可跳過。",
+      path: ["設定", "我的帳號", "使用密碼登入"], toggle: { label: "應關閉", state: "off" } },
+    { ico: "mail", name: "設定 Email 和密碼，綁定 Apple 或 Google", why: "換手機、申訴時才證明得了帳號是你的。",
+      path: ["設定", "我的帳號"] },
+    { ico: "swap", name: "平常關閉「移動帳號」", why: "只在真的要換手機那天才開。",
+      path: ["設定", "我的帳號", "移動帳號"], toggle: { label: "應關閉", state: "off" } },
+    { ico: "seal", name: "開啟「訊息保護」", why: "對話加密。預設是開的，回去確認一次。",
+      path: ["設定", "隱私設定", "訊息保護"], toggle: { label: "應開啟", state: "on" } },
+    { ico: "globe", name: "開啟「偵測可疑網站」", why: "點到釣魚連結時會先攔下來警告你。",
+      path: ["設定", "隱私設定", "偵測可疑網站"], toggle: { label: "應開啟", state: "on" } },
+    { ico: "lock", name: "開啟「密碼鎖定」", why: "手機被拿走時的最後一道鎖。",
+      path: ["設定", "隱私設定", "密碼鎖定"], toggle: { label: "應開啟", state: "on" } },
+    { ico: "voice", name: "改掉語音信箱密碼", why: "預設常是 0000，驗證碼會被聽走。",
+      path: ["打給電信客服"] }
+  ];
+
+  var KEY = "line-guard-steps-v1", saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { saved = {}; }
+
+  var host = document.getElementById("steps"), bar = document.getElementById("bar"), doneEl = document.getElementById("done");
+
+  STEPS.forEach(function (s, i) {
+    var el = document.createElement("div");
+    el.className = "step";
+    var id = "step" + i;
+    var pathHtml = s.path.map(function (p, n) {
+      return (n ? '<i aria-hidden="true">▸</i>' : "") + "<span>" + esc(p) + "</span>";
+    }).join("");
+    var html =
+      '<label class="step-top" for="' + id + '"><input type="checkbox" id="' + id + '">' +
+      '<span class="ico">' + svg(s.ico) + "</span>" +
+      '<span><span class="step-name">' + esc(s.name) + '</span><span class="step-why">' + esc(s.why) + "</span></span></label>" +
+      '<div class="step-foot"><div class="path">' + pathHtml + "</div>";
+    if (s.toggle) {
+      html += '<div class="toggle-row"><span class="sw ' + s.toggle.state + '" aria-hidden="true"></span><span>' + esc(s.toggle.label) + "</span></div>";
+    }
+    el.innerHTML = html + "</div>";
+
+    var box = el.querySelector("input");
+    box.checked = !!saved[i];
+    if (box.checked) el.classList.add("done");
+    box.addEventListener("change", function () {
+      el.classList.toggle("done", box.checked);
+      saved[i] = box.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {}
+      tally();
+    });
+    host.appendChild(el);
+  });
+
+  function tally() {
+    var n = host.querySelectorAll("input:checked").length;
+    doneEl.textContent = n;
+    bar.style.width = (n / STEPS.length * 100) + "%";
+  }
+  tally();
+
+  /* ───── 自我測驗 ───── */
+  var QUIZ = [
+    { ico: "person", from: "通訊錄裡的好友", msg: "幫我家妹妹投個票好不好～用 LINE 登入就能投了🙏",
+      opts: ["幫他投一下", "打電話問本人"], right: 1, why: "他的帳號多半已經被盜了。投票不需要用 LINE 登入。" },
+    { ico: "phone", from: "自稱朋友的新號碼", msg: "我手機掉了，驗證碼會發到你那邊，幫我截圖傳來～",
+      opts: ["截圖傳給他", "不傳，回撥舊號碼"], right: 1, why: "驗證碼只會發到你自己的號碼，是用來登入你的帳號。" },
+    { ico: "bell", from: "LINE 系統通知", msg: "您的帳號剛才於 Windows 裝置登入。",
+      opts: ["應該是延遲，不管", "馬上登出所有裝置"], right: 1, why: "這是真的通知，也是最後的預警。不是你就立刻登出。" },
+    { ico: "briefcase", from: "社群徵人貼文", msg: "在家代工日領 1200，請提供收到的認證碼以利登記。",
+      opts: ["提供認證碼", "封鎖，這是盜帳號"], right: 1, why: "沒有任何工作需要你的驗證碼。" },
+    { ico: "police", from: "自稱 LINE 官方客服", msg: "帳號異常，請點連結登入驗證，24 小時內未處理將停用。",
+      opts: ["點連結驗證", "自己打開 App 檢查"], right: 1, why: "製造時間壓力是詐騙標配，官方不會用連結要你登入。" },
+    { ico: "person", from: "家族群組的親戚", msg: "幫我去超商買 5000 元遊戲點數，序號拍給我，晚點還你。",
+      opts: ["先幫忙墊", "打電話確認本人"], right: 1, why: "點數序號拿到就等於拿到錢，追不回來。" }
+  ];
+
+  var qbox = document.getElementById("quizbox"), scoreEl = document.getElementById("score"), answered = 0, correct = 0;
+
+  QUIZ.forEach(function (q, i) {
+    var el = document.createElement("div");
+    el.className = "quiz";
+    el.innerHTML =
+      '<div class="qfrom"><span class="ico">' + svg(q.ico) + "</span>第 " + (i + 1) + " 題 ・ " + esc(q.from) + "</div>" +
+      '<div class="qmsg">' + esc(q.msg) + '</div><div class="qopts"></div>';
+    var opts = el.querySelector(".qopts");
+
+    q.opts.forEach(function (label, n) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.textContent = label;
+      b.addEventListener("click", function () {
+        if (el.dataset.done) return;
+        el.dataset.done = "1";
+        answered++;
+        if (n === q.right) correct++;
+        Array.prototype.forEach.call(opts.querySelectorAll("button"), function (other, m) {
+          other.disabled = true;
+          if (m === q.right) other.classList.add("right");
+          else if (m === n) other.classList.add("wrong");
+        });
+        var ans = document.createElement("div");
+        ans.className = "qans";
+        ans.innerHTML = '<span class="ico">' + svg("bulb") + "</span><span>" + q.why + "</span>";
+        el.appendChild(ans);
+        scoreEl.textContent = "已作答 " + answered + " ／ " + QUIZ.length + "　答對 " + correct +
+          (answered === QUIZ.length ? (correct === QUIZ.length ? " ・ 全對，請把這頁轉傳出去" : " ・ 答錯的回頭再看一次") : "");
+      });
+      opts.appendChild(b);
+    });
+    qbox.appendChild(el);
+  });
+
+  /* ───── 自救步驟 ───── */
+  var SOS = [
+    { ico: "eye", when: "第 0 分鐘", title: "先看還能不能登入", body: "還進得去，動作要快；已被登出就跳到第 3 步。" },
+    { ico: "devices", when: "立刻", title: "登出所有其他裝置", body: "設定 ▸ 我的帳號 ▸ 登入中的裝置，全部登出並改密碼。" },
+    { ico: "refresh", when: "已被登出", title: "更新 App，按「再次登入」", body: "新版登入畫面有「再次登入」，核對身分後有機會救回。" },
+    { ico: "megaphone", when: "10 分鐘內", title: "用電話通知所有親友", body: "最重要的一步。告訴大家「這個 LINE 不是我」。" },
+    { ico: "form", when: "30 分鐘內", title: "填 LINE 官方客服表單", body: "登入畫面選「不登入並繼續操作」。別找代找回帳號的人。" },
+    { ico: "money", when: "同一天", title: "檢查 LINE Pay 與綁定", body: "停卡，並解除用 LINE 登入的其他網站。" },
+    { ico: "siren", when: "有人受騙", title: "撥 165 或 110 報案", body: "保留對話截圖、匯款紀錄、超商憑證。" },
+    { ico: "shield", when: "之後", title: "重辦帳號，回去做九項設定", body: "同一組手法不會只用一次。" }
+  ];
+
+  var sosBox = document.getElementById("sosbox");
+  SOS.forEach(function (s) {
+    var el = document.createElement("div");
+    el.className = "sos-item";
+    el.innerHTML = '<span class="ico">' + svg(s.ico) + "</span>" +
+      '<div><span class="sos-when">' + esc(s.when) + "</span><h3>" + esc(s.title) + "</h3><p>" + esc(s.body) + "</p></div>";
+    sosBox.appendChild(el);
+  });
+
+  /* ───── 複製轉傳文字 ───── */
+  var copyBtn = document.getElementById("copy"), copied = document.getElementById("copied");
+  copyBtn.addEventListener("click", function () {
+    var node = document.getElementById("cardtext");
+    function flash() { copied.hidden = false; setTimeout(function () { copied.hidden = true; }, 2400); }
+    function fallback() {
+      try {
+        var r = document.createRange();
+        r.selectNodeContents(node);
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(r);
+        copied.textContent = "已選取，請按 Ctrl / ⌘ + C";
+      } catch (e) { copied.textContent = "請手動選取複製"; }
+      flash();
+    }
+    try {
+      navigator.clipboard.writeText(node.textContent).then(function () { copied.textContent = "已複製"; flash(); }, fallback);
+    } catch (e) { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>
