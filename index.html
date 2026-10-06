@@ -564,14 +564,14 @@ footer .fine{font-size:.86rem; opacity:.6; line-height:1.85}
       path: ["設定", "我的帳號"] },
     { ico: "swap", name: "平常關閉「移動帳號」", why: "只在真的要換手機那天才開。",
       path: ["設定", "我的帳號", "移動帳號"], toggle: { label: "應關閉", state: "off" } },
-    { ico: "seal", name: "開啟「訊息保護」", why: "對話加密。預設是開的，回去確認一次。",
-      path: ["設定", "隱私設定", "訊息保護"], toggle: { label: "應開啟", state: "on" } },
-    { ico: "globe", name: "開啟「偵測可疑網站」", why: "點到釣魚連結時會先攔下來警告你。",
-      path: ["設定", "隱私設定", "偵測可疑網站"], toggle: { label: "應開啟", state: "on" } },
+    { ico: "block", name: "開啟「阻擋訊息」", why: "不是好友的人就傳不了訊息給你。",
+      path: ["設定", "隱私設定", "阻擋訊息"], toggle: { label: "應開啟", state: "on" } },
+    { ico: "globe", name: "開啟「偵測可疑網站」", why: "聊天室出現可疑連結會跳警告。上方的「預覽網址」要一起開，LINE 需 15.20.0 以上。",
+      path: ["設定", "聊天", "偵測可疑網站"], toggle: { label: "應開啟", state: "on" } },
     { ico: "lock", name: "開啟「密碼鎖定」", why: "手機被拿走時的最後一道鎖。",
       path: ["設定", "隱私設定", "密碼鎖定"], toggle: { label: "應開啟", state: "on" } },
-    { ico: "voice", name: "改掉語音信箱密碼", why: "預設常是 0000，驗證碼會被聽走。",
-      path: ["打給電信客服"] }
+    { ico: "voice", name: "停用語音信箱，或改掉密碼", why: "預設密碼常是 0000，語音驗證碼會被聽走。台哥大撥 123 按 3，中華撥 ##002#，遠傳撥 123 按 5。",
+      path: ["這不是 LINE 的設定", "打給電信客服"] }
   ];
 
   var KEY = "line-guard-steps-v1", saved = {};
