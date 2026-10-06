@@ -300,10 +300,10 @@ footer .fine{font-size:.86rem; opacity:.6; line-height:1.85}
 <nav class="nav"><div class="wrap">
   <span class="nav-brand"><span class="ico" data-ico="shield"></span>LINE 帳號防盜手冊<span> ・ 全民防詐</span></span>
   <a href="#how">詐騙手法</a>
-  <a href="#setup">九項設定</a>
-  <a href="#quiz">自我測驗</a>
   <a href="#sos">被盜自救</a>
   <a href="#share">轉傳家人</a>
+  <a href="#setup">九項設定</a>
+  <a href="#quiz">自我測驗</a>
 </div></nav>
 
 <header class="hero"><div class="wrap">
@@ -311,7 +311,7 @@ footer .fine{font-size:.86rem; opacity:.6; line-height:1.85}
     <span class="badge"><span class="ico" data-ico="share"></span>公開宣導 ・ 請自由轉傳</span>
     <h1>他們不破解密碼<br>是你<em>親手交出帳號</em></h1>
     <p class="hero-sub">詐騙要的只是一組簡訊驗證碼。<br>帳號被搬走，幾乎救不回來。</p>
-    <p class="hero-note">整理者：______（請填上班級姓名）・2026 年 10 月<br>本頁為防詐宣導教材，非 LINE 官方網站。</p>
+    <p class="hero-note">本頁為防詐宣導教材，非 LINE 官方網站。</p>
   </div>
   <aside class="signal">
     <h4><span class="ico" data-ico="warn"></span>看到這些，立刻停手</h4>
@@ -422,34 +422,9 @@ footer .fine{font-size:.86rem; opacity:.6; line-height:1.85}
   </div>
 </div></div>
 
-<section id="setup" class="tint"><div class="wrap">
-  <div class="sec-head">
-    <div><span class="sec-num">02 ／ 預防設定</span><h2>現在就做的九項設定</h2></div>
-    <p>拿出手機跟著做，做一項打一個勾。</p>
-  </div>
-  <div class="setup">
-    <div class="panel">
-      <h4>防護進度<span class="ico" data-ico="shield"></span></h4>
-      <div class="ring"><span id="done">0</span><span>／ 9 項</span></div>
-      <div class="track"><i id="bar"></i></div>
-      <p>只能做一項的話，請做第 1 項。</p>
-    </div>
-    <div class="steps" id="steps"></div>
-  </div>
-</section>
-
-<section id="quiz"><div class="wrap">
-  <div class="sec-head">
-    <div><span class="sec-num">03 ／ 自我測驗</span><h2>這幾則，你看得出來嗎</h2></div>
-    <p>六題，點下去馬上知道答案。</p>
-  </div>
-  <div class="grid2" id="quizbox"></div>
-  <div class="score" id="score">已作答 0 ／ 6</div>
-</section>
-
 <section id="sos" class="tint"><div class="wrap">
   <div class="sec-head">
-    <div><span class="sec-num">04 ／ 緊急自救</span><h2>已經被盜了怎麼辦</h2></div>
+    <div><span class="sec-num">02 ／ 緊急自救</span><h2>已經被盜了怎麼辦</h2></div>
     <p>從發現那一刻算起，越前面越有用。</p>
   </div>
   <div class="sos" id="sosbox"></div>
@@ -457,7 +432,7 @@ footer .fine{font-size:.86rem; opacity:.6; line-height:1.85}
 
 <section id="share"><div class="wrap">
   <div class="sec-head">
-    <div><span class="sec-num">05 ／ 轉傳</span><h2>傳給家人這一段就好</h2></div>
+    <div><span class="sec-num">03 ／ 轉傳</span><h2>傳給家人這一段就好</h2></div>
     <p>長輩不看長文，複製這三句傳給他們。</p>
   </div>
   <div class="share">
@@ -476,6 +451,31 @@ footer .fine{font-size:.86rem; opacity:.6; line-height:1.85}
     </div>
   </div>
 </div></section>
+
+<section id="setup" class="tint"><div class="wrap">
+  <div class="sec-head">
+    <div><span class="sec-num">04 ／ 預防設定</span><h2>現在就做的九項設定</h2></div>
+    <p>拿出手機跟著做，做一項打一個勾。</p>
+  </div>
+  <div class="setup">
+    <div class="panel">
+      <h4>防護進度<span class="ico" data-ico="shield"></span></h4>
+      <div class="ring"><span id="done">0</span><span>／ 9 項</span></div>
+      <div class="track"><i id="bar"></i></div>
+      <p>只能做一項的話，請做第 1 項。</p>
+    </div>
+    <div class="steps" id="steps"></div>
+  </div>
+</section>
+
+<section id="quiz"><div class="wrap">
+  <div class="sec-head">
+    <div><span class="sec-num">05 ／ 自我測驗</span><h2>這幾則，你看得出來嗎</h2></div>
+    <p>六題，點下去馬上知道答案。</p>
+  </div>
+  <div class="grid2" id="quizbox"></div>
+  <div class="score" id="score">已作答 0 ／ 6</div>
+</section>
 
 <div class="stripe"></div>
 <footer><div class="wrap">
@@ -669,14 +669,13 @@ footer .fine{font-size:.86rem; opacity:.6; line-height:1.85}
 
   /* ───── 自救步驟 ───── */
   var SOS = [
-    { ico: "eye", when: "第 0 分鐘", title: "先看還能不能登入", body: "還進得去，動作要快；已被登出就跳到第 3 步。" },
+    { ico: "eye", when: "第 0 分鐘", title: "先看還能不能登入", body: "還進得去，動作要快；已經進不去就直接通知親友。" },
     { ico: "devices", when: "立刻", title: "登出所有其他裝置", body: "設定 ▸ 我的帳號 ▸ 登入中的裝置，全部登出並改密碼。" },
-    { ico: "refresh", when: "已被登出", title: "更新 App，按「再次登入」", body: "新版登入畫面有「再次登入」，核對身分後有機會救回。" },
     { ico: "megaphone", when: "10 分鐘內", title: "用電話通知所有親友", body: "最重要的一步。告訴大家「這個 LINE 不是我」。" },
     { ico: "form", when: "30 分鐘內", title: "填 LINE 官方客服表單", body: "登入畫面選「不登入並繼續操作」。別找代找回帳號的人。" },
     { ico: "money", when: "同一天", title: "檢查 LINE Pay 與綁定", body: "停卡，並解除用 LINE 登入的其他網站。" },
     { ico: "siren", when: "有人受騙", title: "撥 165 或 110 報案", body: "保留對話截圖、匯款紀錄、超商憑證。" },
-    { ico: "shield", when: "之後", title: "重辦帳號，回去做九項設定", body: "同一組手法不會只用一次。" }
+    { ico: "shield", when: "之後", title: "重辦帳號，再做一次九項設定", body: "同一組手法不會只用一次。" }
   ];
 
   var sosBox = document.getElementById("sosbox");
