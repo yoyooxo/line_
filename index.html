@@ -428,7 +428,7 @@ footer .fine{font-size:.86rem; opacity:.6; line-height:1.85}
     <p>從發現那一刻算起，越前面越有用。</p>
   </div>
   <div class="sos" id="sosbox"></div>
-</section>
+</div></section>
 
 <section id="share"><div class="wrap">
   <div class="sec-head">
@@ -466,7 +466,7 @@ footer .fine{font-size:.86rem; opacity:.6; line-height:1.85}
     </div>
     <div class="steps" id="steps"></div>
   </div>
-</section>
+</div></section>
 
 <section id="quiz"><div class="wrap">
   <div class="sec-head">
@@ -475,7 +475,7 @@ footer .fine{font-size:.86rem; opacity:.6; line-height:1.85}
   </div>
   <div class="grid2" id="quizbox"></div>
   <div class="score" id="score">已作答 0 ／ 6</div>
-</section>
+</div></section>
 
 <div class="stripe"></div>
 <footer><div class="wrap">
@@ -560,7 +560,7 @@ footer .fine{font-size:.86rem; opacity:.6; line-height:1.85}
       path: ["設定", "我的帳號", "登入中的裝置"] },
     { ico: "key", name: "關閉「使用密碼登入」", why: "關掉之後，密碼就算外流也登不進來。",
       path: ["設定", "我的帳號", "使用密碼登入"], toggle: { label: "應關閉", state: "off" } },
-    { ico: "mail", name: "設定 Email 和密碼，綁定 Apple 或 Google", why: "換手機、申訴時才證明得了帳號是你的。",
+    { ico: "mail", name: "設定 Email 和密碼，綁定 Apple 或 Google", why: "密碼還是要設，但它只拿來證明你是本人（換手機、向客服申訴），不是拿來登入的。",
       path: ["設定", "我的帳號"] },
     { ico: "person", name: "關閉「允許利用 ID 加入好友」", why: "陌生人就沒辦法用外流的 ID 把你加成好友。",
       path: ["設定", "隱私設定", "允許利用ID加入好友"], toggle: { label: "應關閉", state: "off" } },
@@ -620,13 +620,13 @@ footer .fine{font-size:.86rem; opacity:.6; line-height:1.85}
     { ico: "person", from: "通訊錄裡的好友", msg: "幫我家妹妹投個票好不好～用 LINE 登入就能投了🙏",
       opts: ["幫他投一下", "打電話問本人"], right: 1, why: "他的帳號多半已經被盜了。投票不需要用 LINE 登入。" },
     { ico: "phone", from: "自稱朋友的新號碼", msg: "我手機掉了，驗證碼會發到你那邊，幫我截圖傳來～",
-      opts: ["截圖傳給他", "不傳，回撥舊號碼"], right: 1, why: "驗證碼只會發到你自己的號碼，是用來登入你的帳號。" },
+      opts: ["不傳，回撥舊號碼", "截圖傳給他"], right: 0, why: "驗證碼只會發到你自己的號碼，是用來登入你的帳號。" },
     { ico: "bell", from: "LINE 系統通知", msg: "您的帳號剛才於 Windows 裝置登入。",
       opts: ["應該是延遲，不管", "馬上登出所有裝置"], right: 1, why: "這是真的通知，也是最後的預警。不是你就立刻登出。" },
     { ico: "briefcase", from: "社群徵人貼文", msg: "在家代工日領 1200，請提供收到的認證碼以利登記。",
-      opts: ["提供認證碼", "封鎖，這是盜帳號"], right: 1, why: "沒有任何工作需要你的驗證碼。" },
+      opts: ["封鎖，這是盜帳號", "提供認證碼"], right: 0, why: "沒有任何工作需要你的驗證碼。" },
     { ico: "police", from: "自稱 LINE 官方客服", msg: "帳號異常，請點連結登入驗證，24 小時內未處理將停用。",
-      opts: ["點連結驗證", "自己打開 App 檢查"], right: 1, why: "製造時間壓力是詐騙標配，官方不會用連結要你登入。" },
+      opts: ["自己打開 App 檢查", "點連結驗證"], right: 0, why: "製造時間壓力是詐騙標配，官方不會用連結要你登入。" },
     { ico: "person", from: "家族群組的親戚", msg: "幫我去超商買 5000 元遊戲點數，序號拍給我，晚點還你。",
       opts: ["先幫忙墊", "打電話確認本人"], right: 1, why: "點數序號拿到就等於拿到錢，追不回來。" }
   ];
@@ -675,7 +675,7 @@ footer .fine{font-size:.86rem; opacity:.6; line-height:1.85}
     { ico: "form", when: "30 分鐘內", title: "通報 LINE 官方，把帳號停掉", body: "到 LINE 官方的客服網頁，選「不登入並繼續操作」就能填表，官方會把被盜的帳號停權。網路上說能幫你找回帳號的人，全部是詐騙。" },
     { ico: "money", when: "同一天", title: "檢查 LINE Pay 與綁定", body: "停卡，並解除用 LINE 登入的其他網站。" },
     { ico: "siren", when: "有人受騙", title: "撥 165 或 110 報案", body: "保留對話截圖、匯款紀錄、超商憑證。" },
-    { ico: "shield", when: "之後", title: "重辦帳號", body: "同一組手法不會只用一次。" }
+    { ico: "shield", when: "之後", title: "重辦帳號", body: "客服確認被盜之後會把舊帳號停權，再引導你開新帳號。貼圖、代幣這些付費商品可以轉移，大約需要 7 到 14 個工作天。" }
   ];
 
   var sosBox = document.getElementById("sosbox");
