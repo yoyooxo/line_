@@ -1,5 +1,8 @@
 # LINE 帳號防盜手冊
 
+▶︎ **線上版：https://yoyooxo.github.io/line_/**
+
+
 防詐宣導教材，單一 HTML 檔案，不需要後端、不需要安裝任何東西。
 
 - `index.html` — 網站本體（含所有樣式、圖示與互動程式）
